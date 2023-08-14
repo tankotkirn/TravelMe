@@ -66,11 +66,11 @@ $con->close();
     <div class="container">
         <h1>Welcome to TravelMe</h1>
         <h3>Travel to every corner of world hasel free with bookings at TravelMe.com</h3>
-        <?php
-        if($insert == true){
-            echo "<p class='submitMsg'> Thanks for submitting your response. We are happy to see you soon!</p>";
-        }
-        ?>
+        <!-- <?php
+        // if($insert == true){
+        //     echo "<p class='submitMsg'> Thanks for submitting your response. We are happy to see you soon!</p>";
+        // }
+        // ?> -->
         <form action="index.php" method="post">
             <label for="name">Name:</label>
             <input type="text" name="name" id="name" placeholder="Enter your name:" required>
