@@ -1,50 +1,3 @@
-<?php
-$insert=false;
-if(isset($_POST['name'])){
-
-// Set connection variables
-$server = "localhost:3307";
-$username = "root";
-$password = "";
-// Create a database connection
-$con = mysqli_connect($server, $username , $password);
-
-
-// Check for connection success
-if(!$con){
-    die("connection to this database failed due to" . mysqli_connect_error());
-}
-// echo "Success connecting to the db."
-
-// Collect post variables
-$name = $_POST['name'];
-$age = $_POST['age'];
-$gender = $_POST['gender'];
-$email = $_POST['email'];
-$phone = $_POST['phone'];
-$address = $_POST['address'];
-$pincode = $_POST['pincode'];
-$city = $_POST['city'];
-$state = $_POST['state'];
-$country = $_POST['country'];
-$desc = $_POST['desc'];
-$sql="INSERT INTO `travelme`.`trip` (`name`, `age`, `gender`, `email`, `phone`, `address`, `pincode`, `city`, `state`, `country`, `desc`, `dt`) VALUES ('$name', '$age', '$gender', '$email', '$phone', '$address', '$pincode', '$city', '$state', '$country', '$desc', current_timestamp());";
-
-// echo $sql;
-// Execute the query
-if($con->query($sql)==TRUE){
-    // echo "Successfully inserted";
-    $insert = true; // Flag for successful insertion
-}
-else{
-    echo "ERROR: $sql <br> $con->error";
-}
-// close the database connection
-$con->close();
-
-}
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -53,7 +6,8 @@ $con->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TravelMe.com</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/style_index.css">
+    <link rel="stylesheet" href="styles/style_form.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -62,8 +16,32 @@ $con->close();
 </head>
 
 <body>
-    <img class="bg" src="bg.jpeg" alt="">
-    <div class="container">
+    <nav class="navbar background h-nav-resp">
+        <ul class="nav-list v-class-resp">
+            <a href="index.html">
+                <div class="logo">
+                  <img src="img/logo.gif" alt="logo">
+                </div>
+              </a>
+            <li> <a href="index.html" > Home</a> </li>
+            <li> <a href="bookings.html"> Bookings</a> </li>
+            <li> <a href="about.html"> About</a> </li>
+            <li> <a href="services.html"> Services</a> </li>
+            <li> <a href="contact.html"> Contact</a> </li>
+        </ul>
+        <div class="rightNav v-class-resp">
+            <form class="googlesrch"  action="http://google.com/search" method="get">
+                <input name="q" id="search" placeholder="Search Google" type ="text">
+                <button class="btn btn-sm"> Search</button>
+            </form>
+        </div>
+        <div class="burger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </nav>
+    <div class="container background">
         <h1>Welcome to TravelMe</h1>
         <h3>Travel to every corner of world hasel free with bookings at TravelMe.com</h3>
         <!-- <?php
@@ -71,7 +49,7 @@ $con->close();
         //     echo "<p class='submitMsg'> Thanks for submitting your response. We are happy to see you soon!</p>";
         // }
         // ?> -->
-        <form action="index.php" method="post">
+        <form class="booking" action="bookings.php" method="post">
             <label for="name">Name:</label>
             <input type="text" name="name" id="name" placeholder="Enter your name:" required>
 
@@ -366,7 +344,11 @@ $con->close();
         </form>
     </div>
     <script src="index.js"></script>
-
+    <footer id="footer" class="background">
+        Copyright ©️ 2023 - TravelMe.com
+        <br> 
+        All Rights Reserved
+    </footer>
     
 </body>
 

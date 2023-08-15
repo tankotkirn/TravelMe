@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    scroll-behavior: smooth;
+}
+.logo{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.logo img{
+    /* width: 33%; */
+    /* border: 2px solid rgb(255, 255, 255); */
+    border-radius: 15px;
+    height : 50%;
+    width: 50%;
+    background-color: white;
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    cursor: pointer;
+    
+}
+.nav-list{
+    width: 60%;
+    /* background-color: rgb(0, 0, 0); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav-list li{
+    list-style: none;
+    padding: 18px 30px;
+
+}
+.nav-list li a{
+    text-decoration: none;
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+}
+.nav-list li a:hover{
+    color: grey;
+    
+}
+
+.rightNav{
+    /* background-color: rgb(234, 178, 94); */
+    width: 40%;
+    text-align: right;
+    padding: 0 23px;
+}
+
+#search{
+    padding: 5px;
+    border: 2px solid gray;
+    border-radius: 5px;
+}
+.background{
+    background: rgba(0, 0, 0, 0.7) url('https://source.unsplash.com/random/1920x1080/?travel');
+    background-size: cover;
+    background-blend-mode: darken;
+}
+
+.box-main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 50%;
+    margin: auto;
+    height: 80%;
+}
+.firstSection{
+    height: 100vh;
+}
+
+.firstHalf{
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.secondHalf img{
+    width: 50%;
+    padding: 4px 0;
+    /* border: 2px solid white; */
+    border-radius: 100px;
+    display: block;
+    margin: auto;
+}
+
+.text-big{
+    font-size: 41px;
+}
+
+.text-small{
+    font-size:18px;
+}
+
+.btn{
+    padding: 4px 4px;
+    margin: 14px 4px;
+    border: 2px solid white;
+    border-radius: 8px;
+    background: none;
+    color: white;
+}
+.btn-dark{
+    padding: 4px 4px;
+    margin: 14px 4px;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 8px;
+    background: none;
+    color: white;
+}
+
+.btn:hover{
+    color: grey;
+    cursor: pointer;
+}
+.btn-sm{
+    padding: 3px 3px;
+}
+.btn-sm:hover{
+    color: grey;
+    cursor: pointer;
+}
+.btn-dark:hover{
+    color: grey;
+    cursor: pointer;
+}
+
+.section{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: auto;
+    max-width: 80%;
+    font-family: 'Ubuntu', sans-serif;
+    padding: 10px;
+}
+.section-left{
+    flex-direction: row-reverse;
+}
+.paras{
+    padding: 16px 24px;
+}
+.sectionSubTag{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.thumbnail img{
+    width: 250px;
+    /* border: 2px solid black; */
+    border-radius: 16px;
+}
+.contact{
+    background: rgba(0, 0, 0, 0.7) url('https://source.unsplash.com/random/1920x1080/?wallpaper,landscape');
+    color: white;
+    background-blend-mode: darken;
+}
+.text-centre{
+    text-align: center;
+    padding: 15px 4px;
+    font-family: 'Ubuntu', sans-serif;
+}
+.googlesrch{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 50%;
+    margin: auto;
+    
+}
+.form-input{
+    width: 100%;
+    margin: 8px 5px;
+    padding: 5px 5px;
+    border: 2px solid grey;
+    border-radius: 5px;
+    outline: none;
+    font-family: 'Ubuntu', sans-serif;
+}
+#footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+    text-align: center;
+}
+
+.burger{
+    display: none;
+    position: absolute;
+    cursor: pointer;
+    right: 5%;
+    top: 15%;
+}
+.line{
+    width: 33px;
+    background-color: white;
+    height: 4px;
+    margin: 4px 3px;
+}
+@media only screen and (max-width: 1000px){
+    .nav-list{
+        flex-direction: column;
+    }
+    .navbar{
+        flex-direction: column;
+        height: 400px;
+        transition: all 0.3s ease-out;
+    }
+    .rightNav{
+        text-align: center;
+    }
+    #search{
+        width: 100%;
+    }
+    .box-main{
+        flex-direction: column-reverse;
+        max-width: 100%;
+    }
+    .burger{
+        display: block;
+    }
+    .h-nav-resp{
+        height: 70px;
+    }
+    .v-class-resp{
+        visibility: hidden;
+    }   
+    .section{
+        flex-direction: column;
+    }
+    .text-big{
+        text-align: center;
+    }
+    .text-small{
+        text-align: center;
+    }
+    .buttons{
+        text-align: center;
+    }
+    .paras{
+        padding: 16px 0px;
+    }
+}
